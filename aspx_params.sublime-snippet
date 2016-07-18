@@ -1,0 +1,21 @@
+<snippet>
+    <content><![CDATA[
+    def get_aspx_params(self, response):
+        form_params = [
+            '__VIEWSTATE',
+            '__VIEWSTATEGENERATOR',
+            '__EVENTVALIDATION',
+        ]
+        aspx_params = {
+            param: response.xpath("//input[@id='{}']/@value".format(param))
+                           .extract_first()
+            for param in form_params
+        }
+        return aspx_params
+
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>scrapyaspx</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.python</scope>
+</snippet>

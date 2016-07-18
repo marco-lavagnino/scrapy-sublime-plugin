@@ -1,0 +1,23 @@
+<snippet>
+    <content><![CDATA[
+    def ${1:postview}(self, response):
+        get_parameters = {
+${3:}
+        }
+
+        post_parameters = {
+${3:}
+        }
+
+        url = "{}/${2:url}?{}".format(
+            self.BASE_URL, urlencode(get_parameters))
+        yield scrapy.FormRequest(url,
+                                 formdata=post_parameters,
+                                 callback=self.last)
+
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>scrapypost</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.python</scope>
+</snippet>

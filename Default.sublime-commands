@@ -1,0 +1,10 @@
+[
+    {
+        "caption": "Scrapy: Format from Postman",
+        "command": "postman_parameters"
+    },
+    {
+        "caption": "Scrapy: Yield Item",
+        "command": "make_yield_item"
+    }
+]

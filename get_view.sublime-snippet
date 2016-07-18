@@ -1,0 +1,17 @@
+<snippet>
+    <content><![CDATA[
+    def ${1:getview}(self, response):
+        get_parameters = {
+${3:}
+        }
+
+        url = "{}/${2:url}?{}".format(
+            self.BASE_URL, urlencode(get_parameters))
+        yield scrapy.Request(url, callback=self.last)
+
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>scrapyget</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.python</scope>
+</snippet>

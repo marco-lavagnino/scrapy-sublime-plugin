@@ -1,0 +1,12 @@
+<snippet>
+    <content><![CDATA[
+    def ${1:redirectview}(self, response):
+        url = "{}/${2:url}".format(self.BASE_URL)
+        yield scrapy.Request(url, callback=self.last)
+
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>scrapyredirect</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.python</scope>
+</snippet>

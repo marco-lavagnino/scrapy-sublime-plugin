@@ -1,0 +1,19 @@
+<snippet>
+    <content><![CDATA[
+    def ${1:jsonview}(self, response):
+
+        json_body = ${3:{\}}
+
+        url = "{}/${2:url}".format(self.BASE_URL)
+        yield scrapy.Request(url,
+                             method='POST',
+                             body=json.dumps(json_body),
+                             headers={'Content-Type': 'application/json'},
+                             callback=self.last)
+
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>scrapyjson</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.python</scope>
+</snippet>
